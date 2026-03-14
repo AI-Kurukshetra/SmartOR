@@ -1,0 +1,59 @@
+# TASKS
+
+- [x] [2026-03-14 09:45] Bootstrap SmartOR application and implement the first multi-hospital command-center UI from `prd.md`
+- [x] [2026-03-14 10:01] Create the initial multi-hospital Supabase schema with RLS, profile trigger, and hospital-scoped tables
+- [x] [2026-03-14 10:01] Implement authentication, middleware session refresh, and role-aware page gating
+- [x] [2026-03-14 10:31] Replace mock data with Supabase-backed persistence paths; demo fallback remains until a live project is configured and migrated
+- [x] [2026-03-14 10:21] Add an idempotent `pnpm seed:demo` path that creates SmartOR demo users, memberships, and meaningful operational records through the Supabase service role
+- [x] [2026-03-14 10:31] Apply the existing SmartOR schema migration to Supabase project `agnjgojoozdyepakkkhy` and run the demo seed
+- [x] [2026-03-14 10:42] Reseed role-based demo users and verify shared login credentials for role-specific QA validation
+- [x] [2026-03-14 10:52] Build role-based dashboard shells and a permission-aware sidebar so each app role only sees allowed SmartOR features
+- [x] [2026-03-14 10:57] Redesign dashboard sidebar and main content layout/theme for a clearer command-center UX across role-based dashboards
+- [x] [2026-03-14 11:00] Add HST-inspired product framing sections and workflow-oriented layout blocks across sidebar and dashboard content
+- [x] [2026-03-14 11:03] Re-redesign sidebar and shell layout with a cleaner control-rail system and stronger stage composition
+- [x] [2026-03-14 11:07] Install `ui-design-system` skill from skills.sh and resolve sidebar visibility/contrast issue in the new dashboard shell
+- [x] [2026-03-14 11:11] Redesign the hospital Real-time OR dashboard UX with an impactful mission-control hierarchy and live pulse lane
+- [x] [2026-03-14 11:13] Make dashboard sidebar sticky and collapsible to a left icon rail with responsive content expansion
+- [x] [2026-03-14 11:17] Prevent sidebar tab clicks from remounting the full dashboard by using in-page anchor navigation on hospital routes
+- [x] [2026-03-14 11:26] Convert hospital module navigation from one-page hash scrolling to dedicated route pages (operations/scheduling/coordination)
+- [x] [2026-03-14 11:37] Refactor hospital routing to a persistent shared layout so sidebar/tab navigation swaps module content without remounting the shell
+- [x] [2026-03-14 11:41] Change default post-login landing to the user’s hospital overview route instead of network overview
+- [x] [2026-03-14 11:43] Add a dedicated hospital `Overview` sidebar item so initial hospital landing shows selected overview state
+- [x] [2026-03-14 11:46] Normalize login redirect selection to preferred/default hospital (is_default → profile default → first membership) for consistent initial hospital + overview selection
+- [x] [2026-03-14 11:50] Force authenticated root visits to resolve and open the user’s preferred hospital route (`/hospitals/[slug]`), falling back deterministically to first membership
+- [x] [2026-03-14 11:56] Add hospital tab-click loading skeletons with route-level fallback and simulated latency to make transitions visibly loading-aware
+- [x] [2026-03-14 11:59] Fix hospital tab-loading skeleton rendering by wrapping child segment content in layout-level Suspense fallback
+- [x] [2026-03-14 12:01] Replace sidebar tab loading behavior with tab-specific skeleton UIs for overview/operations/scheduling/coordination routes
+- [x] [2026-03-14 12:05] Refactor scheduling CRUD UX to modal flows (Create Scheduling + Edit Scheduling) instead of inline on-page forms
+- [x] [2026-03-14 12:09] Fix hospital sidebar Admin Controls route to use a dedicated admin-controls page instead of reusing Coordination content
+- [x] [2026-03-14 12:10] Remove Quick Launch section from dashboard sidebar
+- [x] [2026-03-14 12:20] Install `agent-browser` skill from `https://github.com/vercel-labs/agent-browser` for Codex via skills CLI
+- [x] [2026-03-14 12:23] Implement role-based Overview data packs so each app role sees distinct command metrics/highlights on `/hospitals/[slug]`
+- [x] [2026-03-14 12:25] Align hospital Overview UI so all metrics render together at the top before role brief content
+- [x] [2026-03-14 12:32] Add basic hospital overview metrics dataset with Supabase-backed table CRUD and render overview metrics data/cards from that source
+- [x] [2026-03-14 12:35] Remove Overview metrics data table UI from the Overview tab
+- [x] [2026-03-14 13:28] Add EHR integration boundaries and hospital-level integration settings
+- [x] [2026-03-14 13:35] Validate implemented hospital flows/UI against Casetabs blueprint and implement missing core features (conflict-resolution engine panel + mobile app access manifest)
+- [x] [2026-03-14 13:37] Modify hospital Overview UI/UX layout to align with Casetabs blueprint lanes (mission-control hero, execution tracks, and module routing cards)
+- [x] [2026-03-14 13:40] Fix hospital sidebar layout to full-height left rail and strengthen collapse behavior with persistent state
+- [x] [2026-03-14 13:44] Refine MVP scope UX framing, add sticky top header aligned with sidebar style, and replace dashboard color system with new palette
+- [x] [2026-03-14 13:46] Simplify sticky header by removing duplicate tab links, keep only essential context chips, and place a single sign-out action in header
+- [x] [2026-03-14 13:47] Remove “Signed in as” strip and pin header flush to top
+- [x] [2026-03-14 13:51] Implement MVP role-based readiness CRUD in Coordination (insurance/documentation/status updates for manager roles)
+- [x] [2026-03-14 13:55] Redesign sidebar navigation into modular sections and decongest Operations entry UX
+- [x] [2026-03-14 14:01] Redesign Operations module layout and add a dedicated `Ops resources` sidebar tab to reduce page congestion
+- [x] [2026-03-14 14:04] Convert non-metric content in Operations and Ops resources tabs from cards to table layouts
+- [x] [2026-03-14 14:12] Add role-based CRUD actions and UI controls for Operations + Ops resources table views
+- [x] [2026-03-14 14:25] Validate MVP scope coverage against Casetabs blueprint and enforce role-based hide/show consistency across overview cards/routing and module access
+- [x] [2026-03-14 14:28] Remove Casetabs blueprint must-have coverage content from Overview and keep only core overview metric cards
+- [x] [2026-03-14 14:33] Execute project-wide UI/UX polish pass (theme tokens, sidebar/header shells, panel system, forms, and operations table styling) and validate with `agent-browser`
+- [x] [2026-03-14 14:39] Rework visual design using healthcare-site references (Mayo/Cleveland Clinic/Athena/Zocdoc): update fonts, color system, spacing/radius scale, and shell readability
+- [x] [2026-03-14 14:41] Replace sidebar blue tone with neutral slate palette and refine sidebar content UX hierarchy (operator + hospital context + clearer active states)
+- [x] [2026-03-14 14:50] Build a Supabase-style API Keys settings layout route and shift primary UI accent from blue to emerald/teal
+- [x] [2026-03-14 14:55] Fix low-contrast button visibility regressions and retune sidebar background color styling
+- [x] [2026-03-14 15:06] Create a Casetabs-blueprint-based public landing page on `/` with authenticated redirect preservation and `agent-browser` viewport validation
+- [x] [2026-03-14 15:07] Add explicit `Login` and `Register` actions in the landing-page header and validate visibility with `agent-browser`
+- [x] [2026-03-14 15:09] Refine landing-page header `Register` button design (primary hierarchy, motion, focus state) and validate with `agent-browser`
+- [x] [2026-03-14 15:17] Implement end-to-end Operations live-view CRUD for all OR statuses with explicit current procedures and upcoming cases visibility
+- [x] [2026-03-14 15:29] Add manager-only sidebar tabs for Rooms, Surgeons, Staff users, and Hospital overview with direct CRUD routing
+- [ ] Add Vitest coverage and baseline CI checks
