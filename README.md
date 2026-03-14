@@ -130,6 +130,13 @@ pnpm seed:demo
 
 This creates demo accounts for each role (admin, director, scheduler, surgeon, staff), sets up sample hospitals, and inserts OR rooms, cases, conflicts, equipment, and notifications. The script is idempotent — safe to run multiple times.
 
+### Demo Login Credentials
+
+| Role | Email | Password |
+|---|---|---|
+| hospital_admin (multi-hospital) | olivia.reed@smartor.demo | SmartOR-Demo-2026! |
+| staff | zoe.hart@smartor.demo | SmartOR-Demo-2026! |
+
 ### Development Server
 
 ```bash
